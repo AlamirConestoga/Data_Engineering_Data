@@ -1,6 +1,6 @@
 What This Project Does
 Database Setup: Sets up an employees table on a free Neon PostgreSQL database.
-postgresql://neondb_owner:npg_VwnmWi0aAEO7@ep-sparkling-cloud-b5e2hihk-pooler.c-7.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require
+Set the `DATABASE_URL` environment variable to your own Neon PostgreSQL connection string.
 
 Data Generation: Uses Python and Faker to generate 100 fake employee records with realistic salaries and start dates.
 
@@ -19,16 +19,21 @@ CREATE TABLE employees (
 
 Quick Start
 1. Install Dependencies
+
 Bash
+python -m venv .venv
+.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
+
 2. Add Database Link
-Open data_generation.py and replace DATABASE_URL with your Neon connection string:
+
+Set the `DATABASE_URL` environment variable before running the collector:
 
 Python
-DATABASE_URL = "postgresql://user:password@ep-sample.aws.neon.tech/neondb?sslmode=require"
+$env:DATABASE_URL = "postgresql://user:password@ep-sample.aws.neon.tech/neondb?sslmode=require"
 3. Run Data Generation
 Bash
-python data_generation.py
+python data/cloud_data_collection.py
 Main Insights
 Tenure vs. Pay: Average years of service do not strongly affect average salary levels across departments.
 
