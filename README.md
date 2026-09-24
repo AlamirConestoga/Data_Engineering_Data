@@ -1,5 +1,6 @@
 What This Project Does
 Database Setup: Sets up an employees table on a free Neon PostgreSQL database.
+postgresql://neondb_owner:npg_VwnmWi0aAEO7@ep-sparkling-cloud-b5e2hihk-pooler.c-7.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require
 
 Data Generation: Uses Python and Faker to generate 100 fake employee records with realistic salaries and start dates.
 
